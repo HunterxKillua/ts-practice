@@ -69,7 +69,7 @@ type DeepCamelize<Obj extends Record<string, any>> =
                     : Key
             ] : DeepCamelize<Obj[Key]> 
         };
-type CamelizeArr<Arr> = Arr extends [infer First, ...infer Rest]
+type CamelizeArr<Arr> = Arr extends [infer First extends Record<string, any>, ...infer Rest]
   ? [DeepCamelize<First>, ...CamelizeArr<Rest>]
   : []
 

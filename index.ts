@@ -1,6 +1,3 @@
-import { LargeNumberLike } from "crypto"
-import { ResourceLimits } from "worker_threads"
-
 type isTwo<T> = T extends 2 ? true : false
 
 type res = isTwo<1>
@@ -69,15 +66,15 @@ interface CustomConfig {
   [propName: string]: any
 }
 
-type Mapping<T extends object> = {
+type Mappings<T extends object> = {
   [key in keyof T as Uppercase<key & string>]: [key, T[key]]
 }
 
-type Filters<T extends object> = {
+type Filterss<T extends object> = {
   [key in keyof T]: key
 }
 
-type result = Mapping<{ a: 1, b: 'ts' }>
+type results = Mapping<{ a: 1, b: 'ts' }>
 
 const res2:object = { c: 2, d: false, f: 'abc' }
 
@@ -97,9 +94,9 @@ type F<T> = T extends G ? true : false
 
 const c:F<{ a: '2' }> = true
 
-type IsEqual<A, B> = (A extends B ? true : false) & (B extends A ? true : false);
+type IsEquals<A, B> = (A extends B ? true : false) & (B extends A ? true : false);
 
-const account:IsEqual<1, 1> = true
+const account:IsEquals<1, 1> = true
 
 type BuildArray<
   Len extends number,
@@ -119,7 +116,7 @@ type Subtract<Num1 extends number, Num2 extends number> =
 
 type counter = Subtract<222, 33>
 
-type IsUnionM<A, B = A> = A extends A ? 
+type IsUnionMs<A, B = A> = A extends A ? 
   [B] extends [A] ? false : true
   : never 
 
