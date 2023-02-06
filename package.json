@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "dev": "ts-node practice/base3.ts"
+    "dev": "ts-node utils/str.ts"
   },
   "keywords": [],
   "author": "",

@@ -22,7 +22,7 @@ type UnionUserType = {
   } & Record<`${Key}Id`, string | number>
 }[UserType]
 
-type IsEqual = UnionUser extends UnionUserType ? true : false
+type IsEquals = UnionUser extends UnionUserType ? true : false
 
 const kkk: UnionUser = {
   type: 'user',
