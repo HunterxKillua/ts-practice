@@ -1,5 +1,5 @@
 /* 联合类型与交叉类型的互转 */
-/* 在将非联合类型转换城联合类型是需要使用柯里化 */
+/* 在将非联合类型转换成联合类型是需要使用柯里化 */
 type SingleFruit = {
   apple: number
 } | {
@@ -25,7 +25,7 @@ type FilterUnionObj<T> = {
 type unionType = FilterUnionObj<{ a: string, b: number }>
 
 
-type ToUnionFunc<U> =  U extends any ? (arg: U) => void : never
+type ToUnionFunc<U> = U extends any ? (arg: U) => void : never
 
 type FuncUnion<T> = ToUnionFunc<T> extends (arg: infer T) =>void ? T : never
 
